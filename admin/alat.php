@@ -55,7 +55,7 @@ $kategori = $conn->query("SELECT * FROM kategori");
     <div class="content">
         <h2>Kelola Alat</h2>
 
-        <form method0="POST" class="form">
+        <form method="POST" class="form">
             <h3>Tambah Alat Baru</h3>
             <input type="text" name="nama_alat" placeholder="Nama Alat" required>
             <select name="kategori_id" required>

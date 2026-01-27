@@ -19,14 +19,15 @@ function isAdmin() {
 }
 
 function isPetugas() {
-    return isset($_SESSION['role']) && $_SESSION['role'] == 'petugas' || $_SESSION['role'] == 'admin';
+    return isset($_SESSION['role']) && 
+    ($_SESSION['role'] == 'petugas' || $_SESSION['role'] == 'admin');
 }
 
 function isPeminjam() {
     return isset($_SESSION['role'] ) && $_SESSION['role'] == 'peminjam';
 }
 
-function getCurrentUserld() {
+function getCurrentUserId() {
     return $_SESSION['user_id'] ?? null; }
 
 function getCurrentUsername() {

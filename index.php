@@ -1,38 +1,51 @@
 <?php
-
 session_start();
-include 'includes/config.php';
 
-$error = "";
+$error = '';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     $users = [
-        'admin' => ['password' => 'admin123', 'role' => 'admin', 'nama' => 'Admin Utama'],
-        'petugas1' => ['password' => 'petugas123', 'role' => 'petugas', 'nama' => 'Petugas Satu'],
-        'peminjam1' => ['password' => 'peminjam123', 'role' => 'peminjam', 'nama' => 'Peminjam Satu']
+        'admin' => [
+            'password' => 'admin123',
+            'role' => 'admin',
+            'nama' => 'Admin Utama'
+        ],
+        'petugas1' => [
+            'password' => 'petugas123',
+            'role' => 'petugas',
+            'nama' => 'Petugas Satu'
+        ],
+        'peminjam1' => [
+            'password' => 'peminjam123',
+            'role' => 'peminjam',
+            'nama' => 'Peminjam Satu'
+        ]
     ];
+    if (isset($users[$username]) && $users[$username]['password'] == $password) {
 
-    if (isset($users[$username]) && $user[$username]['password'] == $password) {
-        $_SESSION['user_id'] = 1;
+        $_SESSION['user_id'] = 1; 
         $_SESSION['username'] = $username;
         $_SESSION['role'] = $users[$username]['role'];
         $_SESSION['nama'] = $users[$username]['nama'];
 
         if ($users[$username]['role'] == 'admin') {
-            header('location: admin/dashboard.php');
+            header('Location: admin/dashboard.php');
         } elseif ($users[$username]['role'] == 'petugas') {
-            header('location: petugas/dashboard.php');
+            header('Location: petugas/dashboard.php');
         } else {
-            header('location: peminjam/dashboard.php');
+            header('Location: peminjam/dashboard.php');
         }
         exit();
+
     } else {
-        $error = "Username atau Password salah!";
+        $error = 'Username atau password salah!';
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

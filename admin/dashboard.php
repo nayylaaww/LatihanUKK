@@ -44,7 +44,7 @@ $total_peminjaman = $conn->query("SELECT COUNT(*) as total FROM peminjaman")->fe
                 <h3>Total Alat</h3>
                 <p><?php echo $total_alat; ?></p>
             </div>
-            <div class="stat_carad">
+            <div class="stat_card">
                 <h3>Total Peminjaman</h3>
                 <p><?php echo $total_peminjaman; ?></p>
             </div>

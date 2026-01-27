@@ -8,9 +8,9 @@ include '../includes/functions.php';
 checkAuth('admin');
 
 $start_date = $_GET['start_date'] ?? date('Y-m-01');
-$start_date = $_GET['end_date'] ?? date('Y-m-d');
+$end_date = $_GET['end_date'] ?? date('Y-m-d');
 
-$query = "SELECT p., a.nama_alat, u.nama as peminjam
+$query = "SELECT p.*, a.nama_alat, u.nama as peminjam
     FROM peminjaman p
     JOIN alat a ON p.alat_id = a.id
     JOIN user u ON p.user_id = u.id
@@ -23,14 +23,14 @@ $stmt->execute();
 $peminjaman = $stmt->get_result();
 
 $total_peminjaman = $conn->query("SELECT COUNT(*) as total FROM peminjaman WHERE tanggal_pinjam
-BETWEEN '$start_date' AND 'Send_date'")->fetch_assoc()['total'];
+BETWEEN '$start_date' AND '$end_date'")->fetch_assoc()['total'];
 $total_denda = $conn->query("SELECT SUM(denda) as total FROM peminjaman WHERE tanggal_pinjam
-BETWEEN '$start_date' AND 'Send_date'")->fetch_assoc()['total'];
+BETWEEN '$start_date' AND '$end_date'")->fetch_assoc()['total'];
 $alat_terpopuler = $conn->query("
     SELECT a.nama_alat, COUNT(p.id) as jumlah
     FROM peminjaman p
     JOIN alat a ON p.alat_id = a.id
-    WHERE p.tanggal_pinjam BETWEEN '$start_date' AND 'Send_date'
+    WHERE p.tanggal_pinjam BETWEEN '$start_date' AND '$end_date'
     GROUP BY p.alat_id
     ORDER BY jumlah DESC
     LIMIT 5
@@ -70,7 +70,7 @@ $alat_terpopuler = $conn->query("
 
                 <button type="submit" class="btn btn-primary">Filter</button>
                 <a href="laporan.php" class="btn btn-secondary">Reset</a>
-                <button type="button" onclick="window.print()" class="btn btn-success">Cetak Laporar
+                <button type="button" onclick="window.print()" class="btn btn-success">Cetak Laporan</button>
             </form>
         </div>
 

@@ -118,7 +118,7 @@ $kategori = $conn->query("SELECT * FROM kategori ORDER BY id DESC");
                     <tr>
                         <th>ID</th>
                         <th>Nama Kategori</th>
-                        <th>Jumah Alat</th>
+                        <th>Jumlah Alat</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -152,7 +152,7 @@ $kategori = $conn->query("SELECT * FROM kategori ORDER BY id DESC");
                 <input type="hidden" name="id" id="editId">
                 <div class="form-group">
                     <label>Nama Kategori</label>
-                    <input type="text" name="nama_kategori" id="editNama" class="form-cotrol" required>
+                    <input type="text" name="nama_kategori" id="editNama" class="form-control" required>
                 </div>
                 <button type="submit" name="edit" class="btn btn-primary">Update</button>
             </form>
@@ -161,7 +161,7 @@ $kategori = $conn->query("SELECT * FROM kategori ORDER BY id DESC");
 
     <script>
         function editKategori(id, nama) {
-            document.getElementById('editld').value = id;
+            document.getElementById('editId').value = id;
             document.getElementById('editNama').value = nama;
             document.getElementById('editModal').style.display = 'block';
         }
