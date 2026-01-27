@@ -310,16 +310,79 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'])) {
         </script>
 
         <?php
-        
-        
+        }
+        elseif(isset($_GET['login']) && $_GET['login'] == 'true'){
+            ?>
+            <div class="login-box">
+                <div class="logo">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h2>Login</h2>
+                <?php if(!empty($error)) echo "<div class='error'>$error</div>"; ?>
+
+                <form method="POST">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+
+                <div class="back-link">
+                    <a href="index.php"><i class="fas fa-arrow-left"></i>Kembali ke HAlaman Utama</a>
+                </div>
+
+                <div class="demo-info">
+                    <h3>Akun Demo:</h3>
+                    <div class="account admin">
+                        <strong>Admin:</strong>admin / admin123
+                    </div>
+                    <div class="account petugas">
+                        <strong>Peminjam:</strong>peminjam / peminjam123
+                    </div>
+                    <div class="account peminjam">
+                        <strong>Peminjam:</strong>peminjam / peminjam123
+                    </div>
+                </div>
+            </div>
+            <?php
+        }else{
+            ?>
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h1>Website Peminjaman Alat</h1>
+                <p class="subtitle">
+                Sistem manajemen peminjaman alat laboratorium yang terintegrasi.
+                Kelola peminjaman, pelacakan, dan pelaporan dengan mudah.
+                </p>
+
+                <div class="button-group">
+                    <a href="index.php?login=true" class="btn btn-login">Login</a>
+                    <a href="register.php" class="btn btn-register">Daftar</a>
+                </div>
+
+                <div class="demo-info">
+                    <h3>Akun Demo:</h3>
+                    <div class="account admin">
+                        <strong>Admin:</strong>admin / admin123
+                    </div>
+                    <div class="account petugas">
+                        <strong>Peminjam:</strong>peminjam / peminjam123
+                    </div>
+                    <div class="account peminjam">
+                        <strong>Peminjam:</strong>peminjam / peminjam123
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <p>© 2026 Ujian Kompetensi Keahlian (UKK)</p>
+                    <p>Rekayasa Perangkat Lunak</p>
+                </div>
+            </div>
+            <?php
+        }
         ?>
 
-        
-    
-        
-        
-        
-        ?>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
