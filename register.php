@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 include '../includes/config.php';
 include '../includes/auth.php';
@@ -129,4 +129,4 @@ ORDER BY p.tanggal_pinjam
     </script>
 </body>
 
-</html>
+</html> -->
