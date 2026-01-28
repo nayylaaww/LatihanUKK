@@ -340,7 +340,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'])) {
                 </form>
 
                 <div class="back-link">
-                    <a href="index.php"><i class="fas fa-arrow-left"></i>Kembali ke HAlaman Utama</a>
+                    <a href="index.php"><i class="fas fa-arrow-left"></i>Kembali ke Halaman Utama</a>
                 </div>
 
                 <div class="demo-info">
@@ -349,10 +349,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'])) {
                         <strong>Admin:</strong>admin / admin123
                     </div>
                     <div class="account petugas">
-                        <strong>Peminjam:</strong>peminjam / peminjam123
+                        <strong>Petugas:</strong>petugas1 / peminjam123
                     </div>
                     <div class="account peminjam">
-                        <strong>Peminjam:</strong>peminjam / peminjam123
+                        <strong>Peminjam:</strong>peminjam1 / peminjam123
                     </div>
                 </div>
             </div>
@@ -380,10 +380,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'])) {
                         <strong>Admin:</strong>admin / admin123
                     </div>
                     <div class="account petugas">
-                        <strong>Peminjam:</strong>peminjam / peminjam123
+                        <strong>Petugas:</strong>petugas1 / peminjam123
                     </div>
                     <div class="account peminjam">
-                        <strong>Peminjam:</strong>peminjam / peminjam123
+                        <strong>Peminjam:</strong>peminjam1 / peminjam123
                     </div>
                 </div>
 

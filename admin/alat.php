@@ -83,8 +83,9 @@ $kategori = $conn->query("SELECT * FROM kategori");
                 <td><?php echo $row['nama_kategori']; ?></td>
                 <td><?php echo $row['stok']; ?></td>
                 <td>
-                <a href="?edit=<?php echo $row['id']; ?>">Edit</a>
-                <a href="?hapus=<?php echo $row['id']; ?>" onclick="return confirm('Yakin?')">Hapus</a>
+                <a href="?edit=<?php echo $row['id']; ?>" class="btn btn-warning">Edit</a>
+                <a href="?hapus=<?php echo $row['id']; ?>" onclick="return confirm('Yakin?')"
+                 class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
             <?php endwhile; ?>

@@ -64,7 +64,7 @@ $alat = $conn->query("
             <h3>Ajukan Peminjaman</h3>
             <form method="POST" class="form">
                 <div class="form-group">
-                    <label>pilih Alat</label>
+                    <label>Pilih Alat</label>
                     <select name="alat_id" class="form-control" required>
                         <option value="">-- Pilih Alat--</option>
                         <?php while($row = $alat->fetch_assoc()): ?>
