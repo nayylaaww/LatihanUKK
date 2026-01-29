@@ -70,7 +70,7 @@ $peminjaman_aktif = $conn->query("
                 </thead>
                 <tbody>
                 <?php while($row = $peminjaman_aktif->fetch_assoc()):
-                    $durasi (strtotime(date('Y-m-d')) - strtotime($row['tanggal_pinjam']))/(60*60*24);
+                    $durasi = (strtotime(date('Y-m-d')) - strtotime($row['tanggal_pinjam']))/(60*60*24);
                 ?>
                 <tr>
                     <td><?php echo $row['id']; ?></td>
@@ -117,8 +117,8 @@ $peminjaman_aktif = $conn->query("
 
     <script>
         function showKembalikanModal(id) {
-            document.getElementById('kembalikanld').value = id;
-            document.getElementById('kembalikan Modal').style.display = 'block';
+            document.getElementById('kembalikanId').value = id;
+            document.getElementById('kembalikanModal').style.display = 'block';
         }
 
         function closeModal() {

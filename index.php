@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include_once 'includes/config.php';
+
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'])) {
@@ -26,7 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['username'])) {
     ];
     if (isset($users[$username]) && $users[$username]['password'] == $password) {
 
-        $_SESSION['user_id'] = 1; 
+        $idsaatini = $conn->query("SELECT id FROM user WHERE username = '$username'")->fetch_assoc()['id'];
+        $_SESSION['user_id'] = $idsaatini;
         $_SESSION['username'] = $username;
         $_SESSION['role'] = $users[$username]['role'];
         $_SESSION['nama'] = $users[$username]['nama'];
